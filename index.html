@@ -13,64 +13,87 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm ">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
             <div class="container">
-                <i class="bi bi-arrow-through-heart-fill fs-1" style="color: #7ABFBF"></i>
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <i class="bi bi-arrow-through-heart-fill me-2 fs-2" style="color: rgba(255,255,255,0.9)"></i>
+                    <span>TodoApp</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="" class="nav-link active">Inicio</a></li>
-                        <li class="nav-item"><a href="" class="nav-link active">Tareas</a></li>
-                        <li class="nav-item"><a href="" class="nav-link active">Agregar</a></li>
+                        <li class="nav-item"><a href="#tasks-section" class="nav-link active">Tareas</a></li>
+                        <li class="nav-item"><a href="#add-section" class="nav-link">Agregar</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Perfil</a></li>
                     </ul>
                 </div>
-
             </div>
         </nav>
     </header>
 
-    <main class="container mt-5 p-4">
-        <section id="tasks-section" class="mb-5">
-            <h2 class="mb-4" style="color: #AABF56;">Tus Tareas</h2>
-            <div id="tasks-container" class="list-group">
-                <div class="list-group-item py-3 task-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span>Tarea Predeterminada</span>
-                        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                    </div>
-                </div>
+    <div class="main-container">
+        <main>
+            <!-- Encabezado de la aplicación -->
+            <div class="app-header">
+                <h1>Gestión de Tareas</h1>
+                <p>Organiza tu día y mantente productivo</p>
             </div>
-        </section>
-        <section id="add-section">
-            <h2 class="mb-4" style="color: #AABF56;">Agregar Nueva Tarea</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="text" id="task-input" class="form-control task-input"
-                            placeholder="Escribe tu tarea aquí..." required>
-                        <button class="btn" type="button" id="add-btn"
-                            style="background-color: #9CD9C8;">Agregar</button>
+
+            <div class="content-section">
+                <!-- Sección de tareas -->
+                <section id="tasks-section" class="mb-4">
+                    <h2 class="section-title">Tus Tareas</h2>
+                    <div class="tasks-container">
+                        <div id="tasks-container">
+                            <div class="task-item fade-in-up">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="task-content">Tarea de ejemplo - ¡Comienza a agregar tus propias tareas!</span>
+                                    <div class="task-actions">
+                                        <button class="btn btn-danger-modern" onclick="deleteTask(this)">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- Sección para agregar tareas -->
+                <section id="add-section">
+                    <h2 class="section-title">Agregar Nueva Tarea</h2>
+                    <div class="add-task-section">
+                        <div class="input-group-modern">
+                            <input type="text" id="task-input" class="form-control-modern"
+                                placeholder="¿Qué necesitas hacer hoy?" required>
+                            <button class="btn btn-primary-modern" type="button" id="add-btn">
+                                <i class="bi bi-plus-circle"></i>
+                                Agregar Tarea
+                            </button>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-    </main>
-
-    <div class="fixed-bottom p-3" id="alert-container" style="z-index: 1000;">
-
+        </main>
     </div>
-    <footer class="footer ">
+
+    <div class="fixed-bottom p-3" id="alert-container" style="z-index: 1000;"></div>
+    
+    <footer class="footer">
         <div class="container text-center">
-            <h4 class="mb-2" style="color: #AABF56;">Creado por Laura Andrea Monsalve</h4>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="text-decoration-none text-dark">
-                    <i class="bi bi-linkedin fs-4" style="color: #7ABFBF"></i>
+            <h4 class="mb-3">Creado por Laura Andrea Monsalve</h4>
+            <div class="social-links">
+                <a href="#" class="social-link" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="#" class="text-decoration-none text-dark">
-                    <i class="bi bi-github fs-4" style="color: #7ABFBF"></i>
+                <a href="#" class="social-link" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="#" class="social-link" title="Email">
+                    <i class="bi bi-envelope"></i>
                 </a>
             </div>
         </div>
